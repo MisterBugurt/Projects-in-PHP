@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/mypage', [\App\Http\Controllers\MyPlaceController::class, 'index']);
-Route::get('/home', [\App\Http\Controllers\MyBaseController::class, 'index']);
+Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index']);
+
