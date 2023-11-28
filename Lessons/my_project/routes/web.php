@@ -16,5 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index']);
+Route::get('/workers', [\App\Http\Controllers\WorkerControler::class, 'index'])->name('worker.index');
+Route::get('/workers/create', [\App\Http\Controllers\WorkerControler::class, 'create'])->name('worker.create');
+Route::get('/workers/{worker}', [\App\Http\Controllers\WorkerControler::class, 'show'])->name('worker.show');
+Route::post('/workers', [\App\Http\Controllers\WorkerControler::class, 'store'])->name('worker.store');
+Route::get('/workers/{worker}/edit', [\App\Http\Controllers\WorkerControler::class, 'edit'])->name('worker.edit');
+Route::patch('/workers/{worker}', [\App\Http\Controllers\WorkerControler::class, 'update'])->name('worker.update');
+Route::delete('/workers/{worker}', [\App\Http\Controllers\WorkerControler::class, 'delete'])->name('worker.delete');
+
+
 
